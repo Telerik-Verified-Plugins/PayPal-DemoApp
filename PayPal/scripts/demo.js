@@ -7,11 +7,15 @@
         initPayPal: function () {
             if (!this.checkSimulator()) {
 
-                // TODO change these to your own IDs
+                // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                // !!!!!!!!!!!!!! replace these by your own IDs !!!!!!!!!!!!!!!!!!
+                // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                
                 var clientIDs = {
                     "PayPalEnvironmentProduction": "YOUR_PRODUCTION_CLIENT_ID",
-                    "PayPalEnvironmentSandbox": "ARX57RBinUWnZT1-fLmSnXQp_Oh34dMdVsxbV-Rc6DRVNPNOf5lEwB5ML4c7"
+                    "PayPalEnvironmentSandbox": "YOUR_SANDBOX_CLIENT_ID"
                 };
+                
                 window.PayPalMobile.init(
                     clientIDs,
                     this.onPayPalMobileInit
@@ -22,7 +26,7 @@
         payNow: function () {
             if (!this.checkSimulator()) {
                 window.PayPalMobile.renderSinglePaymentUI(
-                    this.getPayment,
+                    this.getPayment(),
                     function(payment) {alert("payment success: " + JSON.stringify(payment, null, 2))},
                     function(result) {alert(result)}
                 );

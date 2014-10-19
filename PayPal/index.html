@@ -11,13 +11,6 @@
     <script src="kendo/js/jquery.min.js"></script>
     <script src="kendo/js/kendo.mobile.min.js"></script>
 
-    <script>
-        window.onerror = function(a,b,c) {
-            alert(a);
-            alert(b);
-            alert(c);
-        }
-    </script>
     <script src="scripts/demo.js"></script>
     <script src="scripts/app.js"></script>
 </head>
@@ -43,7 +36,7 @@
         </p>
         <p>
             IMPORTANT: The demo app won't work as expected before
-            you've changed the PayPal Client IDs in scripts/demo.js.
+            you've changed the PayPal Client ID's in scripts/demo.js.
         </p>
         <p>
             Custom plugins don't work in the simulator and the AppBuilder companion app,
@@ -68,7 +61,7 @@
             <h3 class="hassubtitle">Payments</h3>
             <div class="subtitle">
                 After initializing PayPal you can make payments.
-                TODO: explain difference between these two.
+                You can even ask permission for any future payments you'd like your app make on behalf of the user.
             </div>
             <button data-role="button" class="button" data-bind="click: payNow">Pay now</button>
             <button data-role="button" class="button" data-bind="click: futurePayment">Ask permission for future payments</button>
